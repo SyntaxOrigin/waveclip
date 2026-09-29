@@ -397,10 +397,11 @@ büyüyen tek yapı pencere sonuçlarıdır (`Vec<f64>`, 8 bayt/kare). 60 dakika
     └── yardimci/mod.rs geçici dizin + WAV üretici
 ```
 
-Satır sayıları (`cargo fmt` sonrası): `rules.rs` 857, `wav.rs` 664,
-`energy.rs` 513, `rapor.rs` 301, `subtitle.rs` 291, `main.rs` 309, `hata.rs` 106,
-`lib.rs` 43; testler `entegrasyon.rs` 600, `yardimci/mod.rs` 183. Kaynak
-toplamı ≈ 2 400 satır, test toplamı ≈ 780 satır.
+Satır sayıları (satır sonu sayımı, boş satırlar dahil): `rules.rs` 916,
+`wav.rs` 722, `tests/entegrasyon.rs` 649, `energy.rs` 563, `main.rs` 336,
+`rapor.rs` 328, `subtitle.rs` 319, `tests/yardimci/mod.rs` 200, `hata.rs` 113,
+`lib.rs` 47. Kaynak (`src/`) toplamı ≈ 2 344 satır, test (`tests/`) toplamı
+≈ 849 satır, `README.md` 589 satır.
 
 ## Yapılandırma
 
