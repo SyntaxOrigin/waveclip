@@ -1,0 +1,29 @@
+[package]
+name = "waveclip"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.74"
+license = "MIT"
+description = "Podcast WAV kayitlarindan kural tabanli hook (ilginc an) adayi bulan ve SRT/VTT altyazi ureten CLI."
+repository = "https://github.com/SyntaxOrigin/waveclip"
+readme = "README.md"
+keywords = ["cli", "audio", "wav", "podcast", "subtitle"]
+categories = ["command-line-utilities", "multimedia::audio"]
+
+[dependencies]
+# serde: rapor.json ve aday.json semasinin turetilmis veri yapisini tanimlamak icin.
+serde = { version = "1", features = ["derive"] }
+# serde_json: aday listesi ve ozet raporu JSON olarak yazilip okunuyor.
+# `float_roundtrip`: varsayilan cozucu f64 degerlerinde 1 ULP kaybettigi icin
+# yazilan raporun geri okundugunde bit bit ayni olmaz. Ozellik sayesinde ryu
+# ile yazilan ondalik, cozuldugunde ozdeger olur (rapor.rs gidis-donus testi).
+serde_json = { version = "1", features = ["float_roundtrip"] }
+# clap: scan/clips/srt/info alt komutlarinin arguman ayristirmasi icin.
+clap = { version = "4", features = ["derive"] }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+panic = "abort"
+strip = "debuginfo"
